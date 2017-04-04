@@ -1,0 +1,6 @@
+ @import url('https://fonts.googleapis.com/css?family=Lato|Quicksand');
+ $dark-gray: #393939;
+ $light-gray: #777777;
+  html, body{
+   overflow-x: hidden;
+ }

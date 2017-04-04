@@ -7,52 +7,53 @@
 <title>Create. Share. Collaborate. | Artbox </title>
 
 <!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css?family=Lato|Quicksand:200,300" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Lato:200,300|Quicksand:200,300" rel="stylesheet">
 
 <!-- CSS -->
  <link rel="stylesheet" href="css/normalize.css">
  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/font-awesome.css">
  <link rel="stylesheet" href="css/animate.css">
 
 
 </head>
 <body>
+<header>
 <nav class="container">
-<div class="one-half">
-<input type="text" value="Search">
+<div class="search">
+<span class ="fa fa-search"></span>
+<input type="text" placeholder="Search">
 </div>
-<div class="one-half">
 <ul>
-<li><a href="login.html">Log in</a></li>
-<li><a href="signup.html">Sign up</a></li>
+<li class="btn-outline"><a href="login.html">Log in</a></li>
+<li class="solid-btn"><a href="signup.html">Sign up</a></li>
 </ul>
-</div>
 </nav>
 <div class="container hero">
-<a href="index.html"><img class="animated fadeIn" src="images/site-logo.png" alt="Artbox" /></a>
-<h1 class="animated fadeIn"> Create. Share. Collaborate. </h1>
+<a href="index.html"><img src="images/site-logo.png" alt="Artbox" /></a>
+<h1> Create. Share. Collaborate. </h1>
 <p>Upload your work and connect with your favorite artists.</p>
 <h3> Featured works </h3>
-<a href="explore.html"> Explore more > </a>
-<div class="featured-work">
+<div class="featured-work one-fourth">
 <img src="images/featured-1.png" />
-<p>Shipping on the Clyde <br />by jagrim</p>
+<p class="work-title">Shipping on the Clyde </p><p class="by-artist">by jagrim</p>
 </div>
-<div class="featured-work">
+<div class="featured-work one-fourth">
 <img src="images/featured-2.png" />
-<p>Coquelicots (La promenade)<br />by oc-monet</p>
+<p class="work-title">Coquelicots (La promenade)</p> <p class="by-artist">by oc-monet</p>
 </div>
-<div class="featured-work">
+<div class="featured-work one-fourth">
 <img src="images/featured-3.png" />
-<p>相州七里浜<br />by hokusaik</p>
+<p class="work-title">相州七里浜</p><p class="by-artist">by hokusaik</p>
 </div>
-<div class="featured-work">
+<div class="featured-work one-fourth">
 <img src="images/featured-4.png" />
-<p>Ohne Titel<br />by aholzel</p>
+<p class="work-title"> Ohne Titel</p><p class="by-artist">by aholzel</p>
 </div>
-<h3>New to Artbox?</h3>
-<img src="images/more-icon.png" />
+<a href="explore.html">Explore more ></a>
+<img class="learn-more" src="images/more-icon.png" />
 </div>
+</header>
 <main role="main">
 <!-- Create a Gallery -->
 <section class="create-gallery">
@@ -93,7 +94,7 @@
 </section>
 <section class="portfolio-subscriptions">
 <h1> Portfolio Subscriptions </h1>
-<div class="subscription-blurb">
+<div class="subscription-blurb one-half">
   <h3>Portfolio</h3>
   <p class="price">$5/month</p>
   <ul class="subscription-features">
@@ -104,7 +105,7 @@
   </ul>
   <a href="subscription-details.html">Learn more</a>
 </div>
-<div class="subscription-blurb">
+<div class="subscription-blurb one-half">
   <h3>Portfolio Premium</h3>
   <p class="price">$10/month</p>
   <ul class="subscription-features">
