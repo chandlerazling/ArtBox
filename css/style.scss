@@ -1,37 +1,45 @@
- @import url('https://fonts.googleapis.com/css?family=Lato|Quicksand');
- $dark-gray: #393939;
- $light-gray: #777777;
- $blood-orange: #FC3D3D;
- $pink: #FF828D;
- $blue: #3DC0F3;
- $gray-section: #FAFAFA;
- html, body{
+@import url('https://fonts.googleapis.com/css?family=Lato|Quicksand');
+$dark-gray: #393939;
+$light-gray: #777777;
+$blood-orange: #FC3D3D;
+$pink: #FF828D;
+$blue: #3DC0F3;
+$gray-section: #FAFAFA;
+$laptop: 992px;
+$tablet: 768px;
+$desktop: 1200px;
+html, body{
    overflow-x: hidden;
- }
- body {
+}
+body {
    font-family: "Lato", Helvetica, Arial, sans-serif;
    color: $dark-gray;
    padding: 0;
    margin: 0;
 
- }
- h1, h2, h3, h4, h5, h6 {
+}
+h1, h2, h3, h4, h5, h6 {
    font-family: "Quicksand", Helvetica, Arial, sans-serif;
- }
-
- h1 {
+}
+h1 {
+   font-size: 24px;
    font-weight: 300;
- }
- h2 {
+}
+h2 {
    font-size:28px;
    font-weight: normal;
    margin-bottom: 5px;
- }
- p {
+}
+p {
    font-size: 16px;
    line-height: 26px;
    font-weight: 100;
- }
+}
+@media (min-width: $tablet) {
+   h1 {
+      font-size: 30px;
+   }
+}
 
 /* GRID */
  .container {
@@ -54,24 +62,47 @@
    position: relative;
    min-height: 1px;
  }
-
  .one-fourth {
    width: 46%;
    margin: 0 2% 5px;
  }
-
  .one-half, .one-third {
    width: 96%;
    margin: 0 2% 20px;
  }
-
+@media (min-width: $tablet) {
+   .container {
+     width: 750px;
+   }
+   .one-fourth {
+      width: 46%;
+   }
+ }
+ @media (min-width: $laptop) {
+   .container {
+     width: 970px;
+   }
+   .one-half {
+     width: 46%;
+   }
+   .one-third {
+     width: 29.33333%;
+   }
+   .one-fourth {
+     width: 21%;
+   }
+ }
+ @media (min-width: $desktop) {
+   .container {
+     width: 1170px;
+   }
+ }
 .btn-outline {
    padding: 10px 22px;
    border: 1px solid $blood-orange;
    border-radius: 100px;
    -webkit-transition: border .2s linear;
  }
-
 .one-half img {
    width: 80%;
    display: block;
@@ -79,11 +110,11 @@
    vertical-align: middle;
    box-shadow: 0 1px 4px $light-gray;
 }
+
 /** HEADER **/
   header nav {
    padding: 1em 0;
  }
-
 header nav .search {
    width: 20%;
    float: left;
@@ -139,8 +170,7 @@ header nav .search {
    -webkit-transition: color .2s linear;
    color: #FFF;
  }
-
-  header nav ul > li.solid-btn {
+ header nav ul > li.solid-btn {
    padding: 11px 20px;
    background: $blood-orange;
    border-radius: 100px;
@@ -162,13 +192,10 @@ header .hero {
    display: block;
    position: relative;
  }
- header .hero h1 {
-   font-size: 28px;
-   font-weight: 300; 
+ header .hero h1 { 
    margin: 25px 0 0;
    color: $dark-gray;
  }
-
  header .hero h3 {
    font-size: 18px;
    font-weight: 300;
@@ -181,120 +208,135 @@ header .hero {
    font-weight: 300;
    text-align: center;
  }
- header .hero img {
+@media (min-width: $tablet) {
+    header .hero p {
+      font-size: 16px;
+   }
+}
+header .hero img {
    display: block;
    margin: 1em auto 0;
- }
-
+}
 header .hero a {
    color: $blood-orange;
    font-weight: 200;
    text-decoration: none;
    margin: 0 0 50px;
 }
-
 header .hero a:hover {
    -webkit-transition: color .2s linear;
    color: $pink;
 }
-
- header .featured-work img {
+header .featured-work img {
    margin-top: 10px;
-   max-width: 100%;
- }
-
- header .featured-work > .work-title {
+   width: 100%;
+}
+header .featured-work > .work-title {
    font-weight: 400;
    font-size: 14px;
    line-height: 12px;
    margin: 5px auto 8px;
- }
-   
-   header .featured-work > .by-artist {
+}
+@media (min-width: $tablet) {
+   header .featured-work > .work-title {
+      font-size: 16px;
+   }
+}
+header .featured-work > .by-artist {
    font-size: 12px;
    line-height: 0;
- }
-
- header .hero > .explore-more {
+}
+header .hero > .explore-more {
    margin-top: 0px;
- }
-
- header .hero > .learn-more {
+}
+header .hero > .learn-more {
    margin: 20px auto;
- }
+}
  .gray-section {
    display: inline-block;
-   width: 100%;
+   width: auto;
    background: $gray-section;
    padding: 15px;
    box-shadow: 0 0 5px $light-gray;
 }
-
 .white-section {
    display: inline-block;
    width: 100%;
    margin: 10px 0;
 }
 
-/*** Create a Gallery ***/
+/*** CREATE A GALLERY ***/
 .create-gallery h1 {
    color: $blue;
    font-weight: 300;
    text-align: center;
 }
-
 .create-gallery p {
    width: 85%;
    margin: 0 auto;
 }
+ @media (min-width: $laptop) {
+   .create-gallery h1 {
+      text-align: left;
+      margin: .67em auto;
+      width: 85%;
+   }
+}
 
-/*** Find Community ***/
+/*** FIND COMMUNITY ***/
 .find-community h1 {
    text-align: center;
    margin-bottom: 30px;
 }
-
 .find-community .one-third {
    text-align: center;
    margin-bottom: 20px;
 }
-
 .find-community p {
-   width: 80%;
+   width: 60%;
    margin: 0 auto;
 }
-
 .find-community h4 {
    font-size: 23px;
    line-height: 0;
    font-weight: 300;
 }
+@media (min-width: 992px) { //laptop 
+   .find-community p {
+      width: 80%;
+   }
+}
 
-
-/*** Publish Portfolio Site ***/
+/*** PUBLISH PORTFOLIO ***/
 .publish-portfolio h1 {
    color: $blood-orange;
    text-align: center;
 
 }
-
 .publish-portfolio p {
    width: 85%;
    margin: 0 auto;
 }
+@media (min-width: 992px) { //laptop
+    .publish-portfolio h1 {
+      text-align: left;
+      margin-left: 0;
+      width: 85%;
+   }
+   .publish-portfolio p {
+      margin-left: 0;
+   }
+}
 
-
-/*** Portfolio Subscriptions ***/
+/*** PORTFOLIO SUBSCRIPTIONS ***/
 .portfolio-subscriptions h1 {
    text-align: center;
 }
-
 .portfolio-subscriptions h3 {
    font-weight: 300;
    font-size: 25px;
    margin-top: 5px;
 }
-
 .portfolio-subscriptions h4 {
    font-size: 20px;
    margin-top: 5px;
@@ -304,16 +346,14 @@ header .hero a:hover {
    text-align: center;
    border: 1px solid $light-gray;
    border-radius: 20px;
-   width: 60%;
+   width: 80%;
    padding: 20px;
    margin: 0 auto;
 }
-
 .portfolio-subscriptions p {
    font-size: 13px;
    margin-bottom: 20px;
 }
-
 .portfolio-subscriptions a {
    background: $blue;
    padding: 10px 20px;
@@ -321,59 +361,17 @@ header .hero a:hover {
    text-decoration: none;
    color: #FFF;
    font-weight: 200;
-
 }
-
  .portfolio-subscriptions a:hover {
    -webkit-transition: background .2s linear;
    background: $pink;
  }
-
-/*** MEDIA QUERIES ***/
-@media (min-width: 768px) { /* tablet */
-   .container {
-     width: 750px;
-   }
-   .one-fourth {
-      width: 46%;
-   }
-   header .hero p {
-      font-size: 16px;
-   }
-   header .featured-work > .work-title {
-      font-size: 16px;
+ @media (min-width: $tablet) {
+   .portfolio-subscriptions .subscription-blurb {
+      width: 60%;
    }
  }
- @media (min-width: 992px) { /*laptop */
-   .container {
-     width: 970px;
-   }
-   .one-half {
-     width: 46%;
-   }
-   .one-third {
-     width: 29.33333%;
-   }
-   .one-fourth {
-     width: 21%;
-   }
-   .create-gallery h1 {
-      text-align: left;
-      margin: .67em auto;
-      width: 85%;
-
-   }
-
-   .publish-portfolio h1 {
-      text-align: left;
-      margin-left: 0;
-      width: 85%;
-   }
-
-   .publish-portfolio p {
-      margin-left: 0;
-   }
-
+ @media (min-width: $laptop) {
    .portfolio-subscriptions .left {
       float: right;
    }
@@ -381,9 +379,43 @@ header .hero a:hover {
    .portfolio-subscriptions .right {
       float: left;
    }
+}
+
+ /* FOOTER */
+ footer {
+   height: 150px;
+   position: relative;
+   overflow: hidden;
+   z-index: 0;
  }
- @media (min-width: 1200px) { /*desktop*/
-   .container {
-     width: 1170px;
+ footer p, footer nav ul {
+   padding: 0 10px;
+   font-size: 14px;
+   font-weight: 100;
+   text-align: center;
+   margin: 0 auto;
+ }
+ footer nav ul li {
+   list-style-type: none;
+   display: inline;
+ }
+ footer nav ul li a {
+   text-decoration: none;
+ }
+ footer .logo{
+   margin: 0 auto;
+   display: block;
+ }
+
+  @media (min-width: 992px){
+   footer{
+     height: 100px;
+   }
+   footer p, footer nav ul{
+     padding: 2em 0;
+     text-align: left;
+   }
+   footer .logo{
+     padding: 2em 0 2em 1.5em;
    }
  }
