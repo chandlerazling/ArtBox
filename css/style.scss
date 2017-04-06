@@ -4,15 +4,23 @@
  $blood-orange: #FC3D3D;
  $pink: #FF828D;
  $blue: #3DC0F3;
+ $gray-section: #FAFAFA;
  html, body{
    overflow-x: hidden;
  }
  body {
    font-family: "Lato", Helvetica, Arial, sans-serif;
-   color:$dark-gray;
+   color: $dark-gray;
+   padding: 0;
+   margin: 0;
+
  }
  h1, h2, h3, h4, h5, h6 {
    font-family: "Quicksand", Helvetica, Arial, sans-serif;
+ }
+
+ h1 {
+   font-weight: 300;
  }
  h2 {
    font-size:28px;
@@ -21,7 +29,7 @@
  }
  p {
    font-size: 16px;
-   line-height: 19px;
+   line-height: 26px;
    font-weight: 100;
  }
 
@@ -52,7 +60,7 @@
    margin: 0 2% 5px;
  }
 
- .one-half, one-third {
+ .one-half, .one-third {
    width: 96%;
    margin: 0 2% 20px;
  }
@@ -64,6 +72,13 @@
    -webkit-transition: border .2s linear;
  }
 
+.one-half img {
+   width: 80%;
+   display: block;
+   margin: 0 auto;
+   vertical-align: middle;
+   box-shadow: 0 1px 4px $light-gray;
+}
 /** HEADER **/
   header nav {
    padding: 1em 0;
@@ -207,6 +222,112 @@ header .hero a:hover {
  header .hero > .learn-more {
    margin: 20px auto;
  }
+ .gray-section {
+   display: inline-block;
+   width: 100%;
+   background: $gray-section;
+   padding: 15px;
+   box-shadow: 0 0 5px $light-gray;
+}
+
+.white-section {
+   display: inline-block;
+   width: 100%;
+   margin: 10px 0;
+}
+
+/*** Create a Gallery ***/
+.create-gallery h1 {
+   color: $blue;
+   font-weight: 300;
+   text-align: center;
+}
+
+.create-gallery p {
+   width: 85%;
+   margin: 0 auto;
+}
+
+/*** Find Community ***/
+.find-community h1 {
+   text-align: center;
+   margin-bottom: 30px;
+}
+
+.find-community .one-third {
+   text-align: center;
+   margin-bottom: 20px;
+}
+
+.find-community p {
+   width: 80%;
+   margin: 0 auto;
+}
+
+.find-community h4 {
+   font-size: 23px;
+   line-height: 0;
+   font-weight: 300;
+}
+
+
+/*** Publish Portfolio Site ***/
+.publish-portfolio h1 {
+   color: $blood-orange;
+   text-align: center;
+
+}
+
+.publish-portfolio p {
+   width: 85%;
+   margin: 0 auto;
+}
+
+
+/*** Portfolio Subscriptions ***/
+.portfolio-subscriptions h1 {
+   text-align: center;
+}
+
+.portfolio-subscriptions h3 {
+   font-weight: 300;
+   font-size: 25px;
+   margin-top: 5px;
+}
+
+.portfolio-subscriptions h4 {
+   font-size: 20px;
+   margin-top: 5px;
+   line-height: 0;
+}
+.portfolio-subscriptions .subscription-blurb {
+   text-align: center;
+   border: 1px solid $light-gray;
+   border-radius: 20px;
+   width: 60%;
+   padding: 20px;
+   margin: 0 auto;
+}
+
+.portfolio-subscriptions p {
+   font-size: 13px;
+   margin-bottom: 20px;
+}
+
+.portfolio-subscriptions a {
+   background: $blue;
+   padding: 10px 20px;
+   border-radius: 100px;
+   text-decoration: none;
+   color: #FFF;
+   font-weight: 200;
+
+}
+
+ .portfolio-subscriptions a:hover {
+   -webkit-transition: background .2s linear;
+   background: $pink;
+ }
 
 /*** MEDIA QUERIES ***/
 @media (min-width: 768px) { /* tablet */
@@ -235,6 +356,30 @@ header .hero a:hover {
    }
    .one-fourth {
      width: 21%;
+   }
+   .create-gallery h1 {
+      text-align: left;
+      margin: .67em auto;
+      width: 85%;
+
+   }
+
+   .publish-portfolio h1 {
+      text-align: left;
+      margin-left: 0;
+      width: 85%;
+   }
+
+   .publish-portfolio p {
+      margin-left: 0;
+   }
+
+   .portfolio-subscriptions .left {
+      float: right;
+   }
+
+   .portfolio-subscriptions .right {
+      float: left;
    }
  }
  @media (min-width: 1200px) { /*desktop*/
