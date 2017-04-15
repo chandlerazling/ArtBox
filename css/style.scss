@@ -1,13 +1,19 @@
 @import url('https://fonts.googleapis.com/css?family=Lato|Quicksand');
+/** COLORS **/
 $dark-gray: #393939;
 $light-gray: #777777;
 $blood-orange: #FC3D3D;
 $pink: #FF828D;
 $blue: #3DC0F3;
 $gray-section: #FAFAFA;
+$dashboard-bg: #F6F6F6;
+$divider-color: #C2C2C2;
+
+/** SCREEN SIZES **/
 $laptop: 992px;
 $tablet: 768px;
 $desktop: 1200px;
+
 html, body{
    overflow-x: hidden;
 }
@@ -119,31 +125,37 @@ header nav .search {
    width: 20%;
    float: left;
 }
- header nav .search input {
-   width: 100%;
-   padding: 10px;
-   font-family: Lato;
-   color: $light-gray;
-   font-size: 13px;
-   font-weight: 200;
-   border: 1px solid $light-gray;
-   border-radius: 100px;
-   margin: 0 5px;
-   text-indent: 20px;
+
+.search-template {
+   input {
+      width: 100%;
+      padding: 10px;
+      font-family: Lato;
+      color: $light-gray;
+      font-size: 13px;
+      font-weight: 200;
+      border: 1px solid $light-gray;
+      border-radius: 100px;
+      margin: 0 5px;
+      text-indent: 20px;
+   }
+   input:focus {
+      border: 1px solid $blue;
+      outline: none;
+      -webkit-transition: box-shadow .2s linear;
+      box-shadow: 0 0 2px $blue;
+ }
+}
+ header nav .search {
+   @extend .search-template;
+   .fa-search {
+      position: absolute;
+      top: 25px;
+      left: 30px;
+      color: $light-gray;
+    }
  }
 
- header nav .search input:focus {
-   border: 1px solid $blue;
-   outline: none;
-   -webkit-transition: box-shadow .2s linear;
-   box-shadow: 0 0 2px $blue;
- }
- header nav .search .fa-search {
-   position: absolute;
-   top: 25px;
-   left: 30px;
-   color: $light-gray;
- }
  header nav ul {
    display: inline;
    text-align: right;
@@ -419,3 +431,521 @@ header .hero > .learn-more {
      padding: 2em 0 2em 1.5em;
    }
  }
+
+/******************************************************************************************
+**************************************** DASHBOARD ****************************************
+*******************************************************************************************/
+.dashboard {
+   background: $dashboard-bg;
+}
+
+.top-nav {
+   height: 55px;
+   width: 100%;
+   border-bottom: 1px solid $light-gray;
+   box-shadow: 0 5px 6px -6px $light-gray;
+   position: fixed;
+   z-index: 500;
+   background: #FFF;
+   .logo {
+      width: 50px;
+      text-align: center;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      top: 10px;
+   }
+   .search {
+      @extend .search-template;
+      width: 10%;
+      position: absolute;
+      left:180px;
+      top: 15px;
+      display: none;
+      .fa-search {
+         position: absolute;
+         top: 10px;
+         left: 15px;
+       
+   }
+}
+   .hover-icon {
+         opacity:0;
+         position: absolute;
+      }
+      .hover-icon:hover {
+         opacity:1;
+         -webkit-transition: opacity .2s linear;
+      }
+   .user {
+      top: 10px;
+      left: 15px;
+      position: absolute;
+      img {
+         width: 35px;
+      }
+   }
+   .add {
+      position: absolute;
+      right: 15px;
+      top: 10px;
+      img {
+         width: 35px;
+      }
+   }
+   .notifications {
+      display: none;
+   }
+   .messages {
+      display: none;
+   }
+   .explore {
+      display: none;
+   }
+   .notifications-hover, .messages-hover, .explore-hover {
+      display: none;
+   }
+   .user-dropdown, .notifications-dropdown, .messages-dropdown, .explore-dropdown {
+      //display: none;
+   }
+   .user-dropdown {
+      .profile-hover {
+         margin-top: 10px;
+      }
+      .likes-hover {
+         margin-top: 10px;
+      }
+      .account-hover {
+         margin-top: 7px;
+      }
+      .logout-hover {
+         margin-top: 10px;
+      }
+   }
+   .explore-dropdown {
+      .recommended-hover {
+         margin-top: 8px;
+      }
+      .trending-hover {
+         margin-top: 7.5px;
+      }
+      .recent-hover {
+         margin-top: 5.4px;
+      }
+      .discover-hover {
+         margin-top: 6px;
+      }
+   }
+}
+.bottom-nav {
+   height: 40px;
+   background: #FFF;
+   border-top: 1px solid $light-gray;
+   bottom: -1px;
+   width: 100%;
+   position: fixed;
+   .nav-icons {
+      width: 80%;
+      margin: 0 auto;
+      img {
+         max-height: 30px;
+         max-width: 30px;
+         margin: 5px 20px;
+      }
+      .search-btn {
+         vertical-align: 3px;
+         height: 27px;
+      }
+      .messages-btn {
+         vertical-align: 3px;
+      }
+}
+}
+
+@media (min-width: $tablet) {
+   .top-nav {
+      height: 70px;
+      .logo {
+         width: 70px;
+      }
+      .user {
+         position: absolute;
+         left: 80px;
+         top: 15px;
+         img {
+            width: 100%;
+         }
+      }
+      .add {
+         display: block;
+         position: absolute;
+         left: 134px;
+         top: 15px;
+         img {
+            width: auto;
+         }
+      }
+      .search {
+         display: block;
+      }
+      .notifications {
+         display: block;
+         position: absolute;
+         right: 213px;
+         top: 20px;
+      }
+
+      .notifications-hover {
+         display: block;
+         position: absolute;
+         right: 211px;
+         top: 18px;
+      }
+      .messages {
+         display: block;
+         position: absolute;
+         right: 160px;
+         top: 24px;
+      }
+      .messages-hover {
+         display: block;
+         position: absolute;
+         right: 158px;
+         top: 22px;
+      }
+      .explore {
+         display: block;
+         position: absolute;
+         right: 110px;
+         top: 20px;
+         img {
+            vertical-align: -18px;
+         }
+      }
+      .explore-hover {
+         display: block;
+         position: absolute;
+         right: 108px;
+         top: 18px;
+      }
+   }
+   .bottom-nav {
+      display: none;
+   }
+}
+
+@media (min-width: $tablet) {
+   .top-nav {
+      .user {
+         left: 80px;
+      }
+      .user-dropdown {
+         left: 3px;
+      }
+      .add {
+         left: 134px;
+      }
+      .search {
+         left:180px;
+      }
+      .notifications {
+         right: 213px;
+      }
+      .notifications-hover {
+         right: 211px;
+      }
+      .notifications-dropdown {
+         right: 79px;
+      }
+      .messages {
+         right: 160px;
+      }
+      .messages-hover {
+         right: 158px;
+      }
+      .messages-dropdown {
+         right: 22px;
+      }
+      .explore {
+         right: 110px;
+      }
+      .explore-hover {
+         right: 108px;
+      }
+      .explore-dropdown {
+         right: 5px;
+      }
+   }
+}
+
+@media(min-width: $laptop) {
+   .top-nav {
+      .user {
+         left: 130px;
+      }
+      .user-dropdown {
+         left: 53px;
+      }
+      .add {
+         left: 190px;
+      }
+      .search {
+         left: 242px;
+      }
+      .notifications {
+         right: 320px;
+      }
+      .notifications-hover {
+         right: 318px;
+      }
+      .notifications-dropdown {
+         right: 186px;
+      }
+      .hover-icon {
+         opacity:0;
+      }
+      .hover-icon:hover {
+         opacity:1;
+         -webkit-transition: opacity .2s linear;
+      }
+      .messages {
+         right: 255px;
+      }
+      .messages-hover {
+         right: 253px;
+      }
+      .messages-dropdown {
+         right: 117px;
+      }
+      .explore {
+         right:190px;
+      }
+      .explore-hover {
+         right:188px;
+      }
+      .explore-dropdown {
+         right: 86px;
+      }
+   }
+}
+@mixin dropdown($width, $height) {
+  // display:none;
+   //margin: 15px 30px;
+   width: $width;
+   background: #fff;
+   border: 0.5px solid $light-gray;
+   position: absolute;
+   height: $height;
+   padding: 20px;
+   text-align: center;
+   border-radius: 20px;
+   top: 75px;
+
+   &:before, &:after {
+      left:$width/2 + 1;
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 0;
+   }
+   &:after {
+      top: -16px;
+      border-left: 20px solid transparent;
+      border-right: 20px solid transparent;
+      border-bottom: 16px solid #FFF;
+   }
+   /*** border ***/
+   &:before {
+      left:$width/2;
+      top: -17px; 
+      border-left: 21px solid transparent;
+      border-right: 21px solid transparent;
+      border-bottom: 17px solid $light-gray;
+   }
+}
+
+/*** Dropdown Link styling used for the User and Explore dropdowns ***/
+.link-list {
+   ul {
+      width: 100%;
+      top: 0;
+      //margin: 0 auto;
+      position: absolute;
+      right: -20px;
+      margin-top: 10px;
+   }
+   li {
+      list-style-type: none;
+      text-align: left;
+      line-height: 35px;
+      white-space: nowrap;
+   }
+   a {
+      text-decoration: none;
+      color: $dark-gray;
+      font-weight: 200;
+   }
+   a:hover {
+      color: $blue;
+      -webkit-transition: color .2s linear;
+   }
+   img {
+      vertical-align: -3px;
+      padding-right: 5px;
+   }
+}
+
+.user-dropdown {  
+   @include dropdown(150px, 120px);
+   @extend .link-list;
+   left: 53px;
+
+   }
+
+.notifications-dropdown {
+   @include dropdown(260px, 85px);
+   @extend .link-list;
+   right: 186px;
+   display:none;
+   .username {
+      font-weight: 400;
+   }
+   .work-title {
+      font-style: italic;
+   }
+   img {
+      vertical-align: -5px;
+   }
+}
+.messages-dropdown {
+   @include dropdown(270px,135px);
+   right: 117px;
+   display:none;
+   .search {
+       top: -5px;
+       width: 70%;
+       position: relative;
+       left: 10%;
+       margin-bottom: 10px;
+   }
+   .search input {
+      height: 5px;
+   }
+   .new-message {
+       position: relative;
+       /* top: 0px; */
+       right: 0;
+       left: 130px;
+       bottom: 42px;
+   }
+   .messages-container {  
+      height: 100px;
+      width: 90%;
+      overflow-y: scroll;
+      top: 50px;
+      position: absolute;
+      margin: 0 auto;
+      overflow-x: hidden;
+      left: 15px;
+      }
+   .message {
+      max-width: 100%;
+      text-align: left;
+      border-bottom: 1px solid $divider-color;
+      height: 35px;
+      padding: 10px;
+      .username {
+         position: relative;
+         left: 40px;
+         //margin-top: 0px;
+         bottom: 60px;
+         font-weight: 400;
+      }
+      .message-text {
+         position: relative;
+         left: 40px;
+         bottom: 83px;
+      }
+      .time-stamp {
+         position: relative;
+         left: 200px;
+         bottom: 143px;
+         font-size: 13px;
+         color: $light-gray;
+      }
+   }
+}
+.explore-dropdown { 
+   @include dropdown(200px, 120px);
+   @extend .link-list;
+   right: 86px;
+   //display:none;
+   }
+
+
+/*** FEED ***/
+
+.dashboard-feed {
+   margin-top: 70px;
+   height: 1400px;
+   .post {
+      background: #FFF;
+      margin: 10px auto;
+      border-top: 1px solid $light-gray;
+      border-bottom: 1px solid $light-gray;
+   }
+   .avatar {
+      padding-left:10px;
+      }
+   .username {
+      font-weight: 400;
+      vertical-align: 13px;
+      padding-left: 5px;
+   }
+   .artwork {
+      width: 100%;
+   }
+   .work-title {
+      font-size: 18px;
+      font-weight: 400;
+      font-style: italic;
+      padding-left: 10px;
+      margin: 0 auto;
+   }
+   .description {
+      padding-left: 10px;
+      margin: 0 auto;
+   }
+   .tags {
+      width: 525px;
+      margin: 0 auto;
+      top: 0px;
+      color: $light-gray;
+      padding-bottom: 5px;
+      padding-left: 8px;
+      border-bottom: 1px solid $divider-color;
+   }
+   .likes-comments {
+      padding: 10px;
+      img {
+         padding-right: 3px;
+      } 
+      span {
+         padding-left: 5px;
+      }
+   }
+}
+@media (min-width: $tablet) {
+   .dashboard-feed {
+      margin-top: 100px;
+      .post {
+         border: 1px solid $light-gray;
+         border-radius: 10px;
+         width: 545px;
+         margin: 20px auto;
+         .tags {
+            padding-left: 0px;
+         }
+         }
+      }
+   }

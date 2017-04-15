@@ -22,35 +22,39 @@
 
 <body class="dashboard">
   <nav class="top-nav">
-    <a href="#"><img src="images/user-icon.png" alt="user" /></a>
+    <a class="user" href="#"><img src="images/user-icon.png" alt="user" /></a>
     <div class="user-dropdown">
       <ul>
-        <li><a href="user-profile.html"><img src="images/profile-icon.png" />Profile</a></li>
-        <li><a href="likes.html"><img src="images/likes-icon.png" />Likes</a></li>
-        <li><a href="account-settings.html"><img src="images/account-icon.png" />Account Settings</a></li>
-        <li><a href="#"><img src="images/logout-icon.png" />Log out</a></li>
+        <li><a href="user-profile.html"><img class="hover-icon profile-hover" src="images/profile-hover-icon.png" /><img src="images/profile-icon.png" />Profile</a></li>
+        <li><a href="likes.html"><img class="hover-icon likes-hover" src="images/likes-hover-icon.png" /><img src="images/likes-icon.png" />Likes</a></li>
+        <li><a href="account-settings.html"><img class="hover-icon account-hover" src="images/account-hover-icon.png" /><img src="images/account-icon.png" />Account Settings</a></li>
+        <li><a href="#"><img class="hover-icon logout-hover" src="images/logout-hover-icon.png" /><img src="images/logout-icon.png" />Log out</a></li>
       </ul>
     </div>
-    <a href="#"><img src="images/add-icon.png" alt="add work"/></a>
+    <a class="add" href="#"><img src="images/add-icon.png" alt="add work"/></a>
     <div class="search">
       <span class ="fa fa-search"></span>
       <input type="text" placeholder="Search">
     </div>
-    <a href="dashboard.html"><img src="images/site-logo.png" alt="Artbox" /></a>
-    <a href="#"><img src="images/notifications-icon.png" alt="notifications"/></a>
+    <a  href="dashboard.html"><img class="logo" src="images/site-logo.png" alt="Artbox" /></a>
+    <a class="notifications" href="#"><img src="images/notifications-icon.png" alt="notifications"/></a>
+    <img class="notifications-hover hover-icon" src="images/notifications-hover-icon.png" />
     <div class="notifications-dropdown">
-    <div class="notification">
-    <p><img src="images/like-avatar.png"><span class="username">steve82</span> liked<span class="work-title"> cayucos sunset </span></p>
-     <p><img src="images/comment-avatar.png"><span class="username">beyinmags</span> commented on<span class="work-title"> cayu...</span></p>
-     <p><img src="images/follow-avatar.png"><span class="username">nat</span> started following you</p>
+    <ul>
+    <li><a href="#"><img src="images/like-avatar.png"><span class="username">steve82</span> liked<span class="work-title"> cayucos sunset </span></a></li>
+     <li><a href="#"><img src="images/comment-avatar.png"><span class="username">beyinmags</span> commented on<span class="work-title"> cayu...</span></a></li>
+     <li><a href="#"><img src="images/follow-avatar.png"><span class="username">nat</span> started following you</a></li>
+     </ul>
     </div>
-    </div>
-    <a href="#"><img src="images/messages-icon.png" alt="messages"/></a>
+    <img  class="messages" src="images/messages-icon.png" alt="messages"/>
+    <img class="messages-hover hover-icon" src="images/messages-hover-icon.png" />
     <div class="messages-dropdown">
       <div class="search">
        <span class ="fa fa-search"></span>
         <input type="text" placeholder="Search messages">
       </div>
+      <a><img class="new-message" src="images/new-msg-icon.png" /></a>
+      <div class="messages-container">
       <div class="message">
       <img src="images/message1-avatar.png" />
       <p class="username">nmarlet</p>
@@ -63,21 +67,37 @@
       <p class="message-text">Oh wow that's awesome! So wh...</p>
       <p class="time-stamp">Yesterday</p>
       </div>
+      <div class="message">
+      <img src="images/post1-avatar.png" />
+      <p class="username">studiokuma</p>
+      <p class="message-text">Ur a nerd</p>
+      <p class="time-stamp">Yesterday</p>
+      </div>
+      </div>
     </div>
-    <a href="#"><img src="images/explore-icon.png" alt="explore" /></a>
+    <img class="explore" src="images/explore-icon.png" alt="explore" />
+    <img class="explore-hover hover-icon" src="images/explore-hover-icon.png" />
     <div class="explore-dropdown">
       <ul>
-      <li><a href="explore.html"><img src="images/recommended-icon.png" />Recommended for you</a></li>
-      <li><a href="explore.html"><img src="images/trending-icon.png" />Trending</a></li>
-      <li><a href="explore.html"><img src="images/recent-icon.png" />Recent works</a></li>
-      <li><a href="explore.html"><img src="images/discover-icon.png" />Discover artists</a></li>
+      <li><a href="explore.html"><img class="hover-icon recommended-hover" src="images/recommended-hover-icon.png"/><img src="images/recommended-icon.png" />Recommended for you</a></li>
+      <li><a href="explore.html"><img class="hover-icon trending-hover" src="images/trending-hover-icon.png"/><img src="images/trending-icon.png" />Trending</a></li>
+      <li><a href="explore.html"><img class="hover-icon recent-hover" src="images/recent-hover-icon.png"/><img src="images/recent-icon.png" />Recent works</a></li>
+      <li><a href="explore.html"><img class="hover-icon discover-hover" src="images/discover-hover-icon.png"/><img src="images/discover-icon.png" />Discover artists</a></li>
       </ul>
     </div>
   </nav>
+<div class=bottom-nav>
+<div class="nav-icons">
+  <img class="search-btn" src="images/search-icon.png" />
+  <img class="notifications-btn" src="images/notifications-icon.png" />
+  <img class="messages-btn" src="images/messages-icon.png" />
+  <img class="explore-btn" src="images/explore-icon.png" />
+  </div>
+</div>
 <section class="dashboard-feed">
 <div class="post">
-<p><img src="images/post1-avatar.png" /> studiokuma </p>
-<img src="images/post1-work.png" />
+<p><img class="avatar" src="images/post1-avatar.png" /><span class="username"> studiokuma</span> </p>
+<img class="artwork" src="images/post1-work.png" />
 <p class="work-title"> Untitled </p>
 <p class="description"> fight for what you want. </p>
 <p class="tags">#graphic design #digital art</p>
@@ -87,8 +107,8 @@
 </div>
 </div>
 <div class="post">
-<p><img src="images/post2-avatar.png" /> beyinmags </p>
-<img src="images/post2-work.png" />
+<p><img class="avatar" src="images/post2-avatar.png" /> <span class="username">beyinmags</span> </p>
+<img class="artwork" src="images/post2-work.png" />
 <p class="work-title"> Untitled </p>
 <p class="description"> a painting i've been working on! </p>
 <p class="tags"></p>
