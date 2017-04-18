@@ -17,13 +17,30 @@
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/font-awesome.css">
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $('.dropdown-btn').click(function(){
+        var dropdown = $(this).next('.dropdown');
+        var isVisible = dropdown.is(':visible');
+        $(".hover-icon").css("opacity","0");
+        $('.dropdown').hide();
+        if (!isVisible) {
+          $(this).animate({opacity:"1"},200);
+          dropdown.show();
+        }
+    });
+    $("li a").hover(function(){
+        $(this).find('.hover-icon').css('opacity','1.0');
+      }, function(){$(this).find('.hover-icon').css("opacity","0")});
+});
+</script>
 </head>
 
 <body class="dashboard">
   <nav class="top-nav">
-    <a class="user" href="#"><img src="images/user-icon.png" alt="user" /></a>
-    <div class="user-dropdown">
+    <img class="user dropdown-btn" src="images/user-icon.png" alt="user" />
+    <div class="user-dropdown dropdown">
       <ul>
         <li><a href="user-profile.html"><img class="hover-icon profile-hover" src="images/profile-hover-icon.png" /><img src="images/profile-icon.png" />Profile</a></li>
         <li><a href="likes.html"><img class="hover-icon likes-hover" src="images/likes-hover-icon.png" /><img src="images/likes-icon.png" />Likes</a></li>
@@ -31,15 +48,15 @@
         <li><a href="#"><img class="hover-icon logout-hover" src="images/logout-hover-icon.png" /><img src="images/logout-icon.png" />Log out</a></li>
       </ul>
     </div>
-    <a class="add" href="#"><img src="images/add-icon.png" alt="add work"/></a>
+    <img class="add" src="images/add-icon.png" alt="add work"/>
     <div class="search">
       <span class ="fa fa-search"></span>
       <input type="text" placeholder="Search">
     </div>
     <a  href="dashboard.html"><img class="logo" src="images/site-logo.png" alt="Artbox" /></a>
     <a class="notifications" href="#"><img src="images/notifications-icon.png" alt="notifications"/></a>
-    <img class="notifications-hover hover-icon" src="images/notifications-hover-icon.png" />
-    <div class="notifications-dropdown">
+    <img class="notifications-hover hover-icon dropdown-btn" src="images/notifications-hover-icon.png" />
+    <div class="notifications-dropdown dropdown">
     <ul>
     <li><a href="#"><img src="images/like-avatar.png"><span class="username">steve82</span> liked<span class="work-title"> cayucos sunset </span></a></li>
      <li><a href="#"><img src="images/comment-avatar.png"><span class="username">beyinmags</span> commented on<span class="work-title"> cayu...</span></a></li>
@@ -47,8 +64,8 @@
      </ul>
     </div>
     <img  class="messages" src="images/messages-icon.png" alt="messages"/>
-    <img class="messages-hover hover-icon" src="images/messages-hover-icon.png" />
-    <div class="messages-dropdown">
+    <img class="messages-hover hover-icon dropdown-btn" src="images/messages-hover-icon.png" />
+    <div class="messages-dropdown dropdown">
       <div class="search">
        <span class ="fa fa-search"></span>
         <input type="text" placeholder="Search messages">
@@ -76,8 +93,8 @@
       </div>
     </div>
     <img class="explore" src="images/explore-icon.png" alt="explore" />
-    <img class="explore-hover hover-icon" src="images/explore-hover-icon.png" />
-    <div class="explore-dropdown">
+    <img class="explore-hover hover-icon dropdown-btn" src="images/explore-hover-icon.png" />
+    <div class="explore-dropdown dropdown">
       <ul>
       <li><a href="explore.html"><img class="hover-icon recommended-hover" src="images/recommended-hover-icon.png"/><img src="images/recommended-icon.png" />Recommended for you</a></li>
       <li><a href="explore.html"><img class="hover-icon trending-hover" src="images/trending-hover-icon.png"/><img src="images/trending-icon.png" />Trending</a></li>

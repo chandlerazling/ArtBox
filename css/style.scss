@@ -447,6 +447,9 @@ header .hero > .learn-more {
    position: fixed;
    z-index: 500;
    background: #FFF;
+   .dropdown-btn {
+      cursor: pointer;
+   }
    .logo {
       width: 50px;
       text-align: center;
@@ -473,10 +476,11 @@ header .hero > .learn-more {
          opacity:0;
          position: absolute;
       }
+      /*
       .hover-icon:hover {
          opacity:1;
          -webkit-transition: opacity .2s linear;
-      }
+      }*/
    .user {
       top: 10px;
       left: 15px;
@@ -704,10 +708,11 @@ header .hero > .learn-more {
       .hover-icon {
          opacity:0;
       }
+      /*
       .hover-icon:hover {
          opacity:1;
          -webkit-transition: opacity .2s linear;
-      }
+      }*/
       .messages {
          right: 255px;
       }
@@ -740,6 +745,7 @@ header .hero > .learn-more {
    text-align: center;
    border-radius: 20px;
    top: 75px;
+   display:none;
 
    &:before, &:after {
       left:$width/2 + 1;
@@ -787,7 +793,7 @@ header .hero > .learn-more {
    }
    a:hover {
       color: $blue;
-      -webkit-transition: color .2s linear;
+      //-webkit-transition: color .2s linear;
    }
    img {
       vertical-align: -3px;
@@ -830,6 +836,9 @@ header .hero > .learn-more {
    }
    .search input {
       height: 5px;
+   }
+   .search .fa-search {
+      top: 5px;
    }
    .new-message {
        position: relative;
